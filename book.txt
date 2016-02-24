@@ -1,0 +1,22 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Proin egestas dolor id nisl elementum gravida. 
+Etiam ullamcorper velit venenatis, pellentesque turpis lobortis, finibus nisl. 
+Fusce id lobortis diam, et imperdiet libero. 
+Maecenas sem ex, sodales quis arcu id, pulvinar viverra metus. 
+Sed efficitur tellus lacus, et varius orci aliquam ut. 
+Duis sed sagittis mi. 
+Aenean euismod in nisi et porttitor. 
+Mauris sit amet porta elit. 
+Pellentesque in urna ut nunc interdum congue nec a ipsum. 
+Etiam at fringilla justo, viverra varius nunc. 
+Suspendisse eget massa nec nisi feugiat venenatis.
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	book.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
