@@ -1,0 +1,10 @@
+(a) How many commits have been done to the repository by the end of step 11?
+(b) When was the file .gitignore modified last?
+(c) List the files, which were in the repository on 08/21/2015 at 11:00PM.
+(d) How many times was each one of the files inside the HardwoodSellerJava\src folder modified?
+(e) What is the difference between git log and git status
+(f) What git command would you use to see the commits where "main.java" was part of the changesets? 
+(g) What git command would you use to see the commits whose commit message contains the word "trans-
+    action
+(h) What git command would you use to see the commits made by "Lauren" between 01/05/2016 and
+    02/16/2016
