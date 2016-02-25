@@ -22,8 +22,9 @@ public class HardwoodSeller {
             Scanner temp = new Scanner(System.in);
             System.out.print("Please enter the name of the file:"
                         + "\n>>");
-            
-            readInputFile(temp.nextLine());
+            String inp = temp.nextLine();
+            System.out.println();
+            readInputFile(inp);
             
             temp.close();
 	}
@@ -48,7 +49,7 @@ public class HardwoodSeller {
                     String[] terms;
                     terms = in.nextLine().split(";");
                     
-                    buyerName = line[0];addr = line[1];
+                    buyerName = terms[0];addr = terms[1];
                     
                     System.out.println(buyerName);System.out.println(addr);
                     
@@ -56,10 +57,8 @@ public class HardwoodSeller {
                     
                     for(String s : terms){
                         woodType = s.substring(0,s.indexOf(":"));
-                        amount = Integer.parseInt(s.substring(s.indexOf(":")));
+                        amount = Integer.parseInt(s.substring(s.indexOf(":")+1));
                         
-                        System.out.println(woodType);
-                        System.out.println(amount);
                         WoodItem w = new WoodItem(woodType,
                                 getBaseDeliveryTime(woodType),
                         getPrice(woodType));
@@ -72,8 +71,8 @@ public class HardwoodSeller {
                                 + (w.getPrice()*amount) + ", ");
                     }//done processing wood
                     
-                    System.out.println("ETA:"+deliTime);
-                    System.out.println("Total Price:"+totalPrice);
+                    System.out.println("ETA:"+deliTime+" hours");
+                    System.out.println("Total Price of Purchase:"+totalPrice);
                 }
                 
                 
