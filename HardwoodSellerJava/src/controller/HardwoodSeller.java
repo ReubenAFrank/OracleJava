@@ -1,7 +1,7 @@
 /**
  * 
  */
-package controller;
+//package controller;
 
 import java.util.Scanner;
 import java.io.File;
@@ -45,12 +45,14 @@ public class HardwoodSeller {
                 
                 if(in.hasNext()){//while there are more input tokens
                     buyerName = in.next();addr = in.next();in.next();//skip date
-                    
+                    in.next(); //gets rid of date
                     System.out.println(buyerName);System.out.println(addr);
                     
                     while(in.hasNext()){//get type and amount repeatedly
                         woodType = in.next();amount = in.nextInt();
                         
+                        System.out.println(woodType);
+                        System.out.println(amount);
                         WoodItem w = new WoodItem(woodType,
                                 getBaseDeliveryTime(woodType),
                         getPrice(woodType));
