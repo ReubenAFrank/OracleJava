@@ -3,8 +3,9 @@
  */
 //package controller;
 
-import java.util.Scanner;
+
 import java.io.File;
+import java.util.Scanner;
 import java.io.IOException;
 
 /**
@@ -17,9 +18,9 @@ public class HardwoodSeller {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) throws Exception{//file input data
+	public static void main(String[] args) throws IOException{//file input data
             Scanner temp = new Scanner(System.in);
-            System.out.println("Please enter the name of the file:"
+            System.out.print("Please enter the name of the file:"
                         + "\n>>");
             
             readInputFile(temp.nextLine());
@@ -27,7 +28,7 @@ public class HardwoodSeller {
             temp.close();
 	}
 	
-	public static void readInputFile(String inputFilePath){
+	public static void readInputFile(String inputFilePath) throws IOException{
                 Scanner in;
                 String buyerName, addr, woodType;
                 //date not needed to print out
@@ -43,34 +44,38 @@ public class HardwoodSeller {
 		}//error handling over
 		
                 
-                if(in.hasNext()){//while there are more input tokens
-                    buyerName = in.next();addr = in.next();in.next();//skip date
-                    in.next(); //gets rid of date
+                if(in.hasNext()){
+                    String[] terms;
+                    terms = in.nextLine().split(";");
+                    
+                    buyerName = line[0];addr = line[1];
+                    
                     System.out.println(buyerName);System.out.println(addr);
                     
-                    while(in.hasNext()){//get type and amount repeatedly
-                        woodType = in.next();amount = in.nextInt();
+                    terms = in.nextLine().split(";");//get line of woodtypes/amt
+                    
+                    for(String s : terms){
+                        woodType = s.substring(0,s.indexOf(":"));
+                        amount = Integer.parseInt(s.substring(s.indexOf(":")));
                         
                         System.out.println(woodType);
                         System.out.println(amount);
                         WoodItem w = new WoodItem(woodType,
                                 getBaseDeliveryTime(woodType),
                         getPrice(woodType));
-                        
                         //add this wood's cost to totalPrice
                         totalPrice +=w.getPrice()*amount;
                         //set deliTime to the max of itself and deliveryTime for this 
                         //amount of wood w
                         deliTime = Math.max(deliTime, deliveryTime(amount, w));
-                        
                         System.out.println(w.getType()+" | BF:"+amount+" | Price:"
                                 + (w.getPrice()*amount) + ", ");
-                        
-                        
-                    }//adding each new type to woodItems
+                    }//done processing wood
+                    
                     System.out.println("ETA:"+deliTime);
                     System.out.println("Total Price:"+totalPrice);
                 }
+                
                 
                 
 	}
