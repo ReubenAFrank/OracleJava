@@ -20,7 +20,7 @@ README.txt.txt
 REMOVE.txt.txt
 
 (d) How many times was each one of the files inside the HardwoodSellerJava\src folder modified?
-HardwoodSeller.java -- edited 8 times
+HardwoodSeller.java -- edited 7 times
 WoodItem.java -- edited 2 times
 (In all examples I excluded cases where only the directory of a file was changed but included times when files were first created)
 
