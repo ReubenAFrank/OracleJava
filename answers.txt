@@ -25,8 +25,10 @@ WoodItem.java -- edited 2 times
 (In all examples I excluded cases where only the directory of a file was changed but included times when files were first created)
 
 (e) What is the difference between git log and git status
-Git status displays changed files to be committed as well as untracked files/changes that have not been/will not be committed until they are staged. It may not display anything important if all changes have already been committed/all files unstaged.
-Git log however, only tracks previous commits (their date, the author, and the commit message), and doesn't display any file information not in the commit message.
+Git status displays changed files to be committed as well as untracked files/changes that have not been/will not be committed until
+they are staged. It may not display anything important if all changes have already been committed/all files unstaged.
+Git log however, only tracks previous commits (their date, the author, and the commit message), 
+and doesn't display any file information not in the commit message.
 
 (f) What git command would you use to see the commits where "main.java" was part of the changesets?
 git log --follow main.java
