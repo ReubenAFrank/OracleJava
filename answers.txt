@@ -1,10 +1,39 @@
 (a) How many commits have been done to the repository by the end of step 11?
+12 commits
+
+
 (b) When was the file .gitignore modified last?
+17 February 2016 at 23:39:17
+
 (c) List the files, which were in the repository on 08/21/2015 at 11:00PM.
+src
+>controller
+>>HardwoodSeller.java
+>model
+>>WoodItem.java
+
+.classpath
+.gitattributes
+.gitignore
+.project
+README.txt.txt
+REMOVE.txt.txt
+
 (d) How many times was each one of the files inside the HardwoodSellerJava\src folder modified?
+HardwoodSeller.java -- edited 8 times
+WoodItem.java -- edited 2 times
+(In all examples I excluded cases where only the directory of a file was changed but included times when files were first created)
+
 (e) What is the difference between git log and git status
-(f) What git command would you use to see the commits where "main.java" was part of the changesets? 
+Git status displays changed files to be committed as well as untracked files/changes that have not been/will not be committed until they are staged. Git log however, only tracks previous commits, meaning that it only shows the end result of changes to staged files after each commit.
+
+(f) What git command would you use to see the commits where "main.java" was part of the changesets?
+git log --follow main.java
+
 (g) What git command would you use to see the commits whose commit message contains the word "trans-
     action
+    git log --grep=trans-action
+    
 (h) What git command would you use to see the commits made by "Lauren" between 01/05/2016 and
     02/16/2016
+    git log --author=Lauren --until={2016-02-16} --after={2016-01-05}
